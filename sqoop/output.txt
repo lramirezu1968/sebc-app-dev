@@ -1,0 +1,10 @@
+[user01@vstkazu201601 sqoop]$ hdfs dfs -ls boot_camp/sqoop/
+Found 2 items
+-rw-r--r--   3 user01 supergroup          0 2018-05-15 20:15 boot_camp/sqoop/_SUCCESS
+-rw-r--r--   3 user01 supergroup         30 2018-05-15 20:15 boot_camp/sqoop/part-m-00000
+[user01@vstkazu201601 sqoop]$
+
+
+[user01@vstkazu201601 sqoop]$ hdfs dfs -cat  boot_camp/sqoop/part-m-00000
+5.12.0,vstkazu201601/10.0.0.4
+[user01@vstkazu201601 sqoop]$

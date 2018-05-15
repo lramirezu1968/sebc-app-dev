@@ -1,0 +1,17 @@
+[user01@vstkazu201601 flume]$ hdfs dfs -ls -R /user/user01/boot_camp/flume/
+drwxr-xr-x   - user01 supergroup          0 2018-05-15 21:55 /user/user01/boot_camp/flume/201805152154
+-rw-r--r--   3 user01 supergroup       1711 2018-05-15 21:54 /user/user01/boot_camp/flume/201805152154/flume.1526421286889.txt
+-rw-r--r--   3 user01 supergroup       1711 2018-05-15 21:54 /user/user01/boot_camp/flume/201805152154/flume.1526421286890.txt
+-rw-r--r--   3 user01 supergroup       1198 2018-05-15 21:55 /user/user01/boot_camp/flume/201805152154/flume.1526421286891.txt
+drwxr-xr-x   - user01 supergroup          0 2018-05-15 21:55 /user/user01/boot_camp/flume/201805152155
+-rw-r--r--   3 user01 supergroup       1751 2018-05-15 21:55 /user/user01/boot_camp/flume/201805152155/flume.1526421301029.txt
+-rw-r--r--   3 user01 supergroup       1711 2018-05-15 21:55 /user/user01/boot_camp/flume/201805152155/flume.1526421301030.txt
+-rw-r--r--   3 user01 supergroup       1711 2018-05-15 21:55 /user/user01/boot_camp/flume/201805152155/flume.1526421301031.txt
+-rw-r--r--   3 user01 supergroup       1711 2018-05-15 21:55 /user/user01/boot_camp/flume/201805152155/flume.1526421301032.txt
+-rw-r--r--   3 user01 supergroup        799 2018-05-15 21:55 /user/user01/boot_camp/flume/201805152155/flume.1526421301033.txt
+[user01@vstkazu201601 flume]$
+
+
+
+[user01@vstkazu201601 flume]$ hdfs dfs -cat /user/user01/boot_camp/flume/201805152154/flume.1526421286889.txt
+SEQ!org.apache.hadoop.io.LongWritable"org.apache.hadoop.io.BytesWritableх▒*▒▒▒▒Y▒▒ce▒{▒%hello world goodbye world hello againce▒{▒%this is a test it does not work helloce▒{▒%hello world goodbye world hello againce▒{▒%this is a test it does not work helloce▒{▒%hello world goodbye world hello againce▒{▒%this is a test it does not work helloce▒{▒%hello world goodbye world hello againce▒{▒%this is a test it does not work helloce▒{▒%hello world goodbye world hello againce▒{▒%this is a test it does not work helloce▒{▒%hello world goodbye world hello againce▒{▒%this is a test it does not work helloce▒{▒%hello world goodbye world hello againce▒{▒%this is a test it does not work helloce▒{▒%hello world goodbye world hello againce▒{▒%this is a test it does not work helloce▒{▒%hello world goodbye world hello againce▒{▒%this is a test it does not work helloce▒{▒%hello world goodbye world hello againce▒{▒%this is a test it does not work helloce▒{▒%hello world goodbye world hello againce▒{▒%this is a test it does not work helloce▒{▒%hello world goodbye world hello againce▒{▒%this is a test it does not work helloce▒{▒%hello world goodbye world hello againce▒{▒%this is a test it does not work helloce▒{▒%hello world goodbye world hello againce▒{▒%this is a test it does not work hello▒▒▒▒х▒*▒▒▒▒Y▒▒[user01@vstkazu201601 flume]$
