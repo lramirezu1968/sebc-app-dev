@@ -1,0 +1,17 @@
+[user01@vstkazu201601 Spark]$ hdfs dfs -cat  boot_camp/Spark2/entrada2.txt
+b,2
+a,1
+c,3
+z,3
+x,5
+y,2
+[user01@vstkazu201601 Spark]$
+
+[user01@vstkazu201601 Spark]$ hdfs dfs -cat boot_camp/Spark2/salida1/part*
+(a,1)
+(b,2)
+(c,3)
+(x,5)
+(y,2)
+(z,3)
+[user01@vstkazu201601 Spark]$

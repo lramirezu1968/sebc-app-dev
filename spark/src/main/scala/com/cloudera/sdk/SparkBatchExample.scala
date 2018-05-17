@@ -22,6 +22,11 @@ object SparkBatchExample {
         conf.set("spark.cleaner.ttl", "120000")
 
         /* READ DATA FROM HDFS, SORT BY KEY, SAVE TO HDFS */
+	    val tf = sc.textFile(args(0))
+        val pair = tf.map(line => line.split(",")).map(word =>(word(0),word(1)))
+        val sorted = pair.sortByKey()
+        sorted.saveAsTextFile(args(1))
+
     }
 }
 
