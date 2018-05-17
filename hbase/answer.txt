@@ -1,0 +1,19 @@
+visita
+------
+key: dominio+fecha_visita
+f1:visitante
+    email,
+	ip,
+	hora_visita
+
+
+visitante
+--------
+key: email
+f1: detalle_visita
+    ip,
+    fecha_visita,
+	dominio,
+
+create 'visita' 'visitante';
+create 'visitante' 'detalle_visita';
