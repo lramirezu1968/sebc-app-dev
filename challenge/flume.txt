@@ -1,0 +1,43 @@
+
+----
+-- Ejecutar Agente
+flume-ng agent --conf conf --conf-file job.config --name a1 -Dflume.root.logger=DEBUG,console
+---
+
+
+---
+-- Configuración para Agente:
+-- 1) Para el sink de HDFS: Se agregan parámetros rollInterval y rollSize para configurar el requerimiento de 5 segundos y/o 100 Bytes
+-- 2) Para el sink de kafka: Se agregan parámetros batchsize y linger para configurar el requerimiento de 5 segundos y/o 100 Bytes
+----
+
+a1.sources = r1
+a1.sinks = k1, k2
+a1.channels = c1, c2
+
+a1.sources.r1.type = exec
+a1.sources.r1.command = ./catdata.sh
+a1.sources.r1.batchsize = 40
+a1.sources.r1.channels = c1 c2
+
+a1.sinks.k1.type = hdfs
+a1.sinks.k1.hdfs.fileType = SequenceFile
+a1.sinks.k1.hdfs.path = /user/user01/boot_camp/challenge/flume/%Y%m%d%H%M
+a1.sinks.k1.hdfs.filePrefix = flume
+a1.sinks.k1.hdfs.fileSuffix = .txt
+a1.sinks.k1.hdfs.rollInterval = 5
+a1.sinks.k1.hdfs.rollSize = 100
+a1.sinks.k1.hdfs.useLocalTimeStamp = true
+a1.sinks.k1.channel = c1
+
+a1.sinks.k2.type = org.apache.flume.sink.kafka.KafkaSink
+a1.sinks.k2.brokerList = vstkazu201601:9092, vstkazu201602:9092, vstkazu201603:9092, vstkazu201604:9092
+a1.sinks.k2.channel = c2
+a1.sinks.k2.kafka.batch.size = 100
+a1.sinks.k2.kafka.linger.ms = 5000
+
+a1.channels.c1.type = memory
+a1.channels.c1.capacity = 1000
+
+a1.channels.c2.type = memory
+a1.channels.c2.capacity = 1000

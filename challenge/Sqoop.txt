@@ -1,0 +1,59 @@
+----
+-- Comando Sqoop solicitado
+----
+sqoop import --connect jdbc:mysql://vstkazu201601/db01 --username user01 --password xxx --query 'select Y from X  WHERE Y BETWEEN 0 and 1000 and $CONDITIONS' --target-dir  /user/user01/landing/test/sqoop/ --split-by Y -m 5;
+
+----
+-- Creación de tabla e información
+----
+mysql -u user01 --password=xxx
+use db01;
+CREATE TABLE IF NOT EXISTS X (
+  Y INT(11) NOT NULL AUTO_INCREMENT,
+  ingest_type VARCHAR(45) DEFAULT NULL,
+  start_date DATE DEFAULT NULL,
+  PRIMARY KEY (Y)
+);
+
+insert into X values (11,'sqoop','2017-01-01');
+insert into X values (12,'sqoop','2017-01-02');
+insert into X values (13,'sqoop','2017-01-03');
+insert into X values (14,'sqoop','2017-01-04');
+insert into X values (15,'sqoop','2017-01-05');
+insert into X values (21,'sqoop','2017-01-01');
+insert into X values (22,'sqoop','2017-01-02');
+insert into X values (23,'sqoop','2017-01-03');
+insert into X values (24,'sqoop','2017-01-04');
+insert into X values (25,'sqoop','2017-01-05');
+insert into X values (31,'sqoop','2017-01-01');
+insert into X values (32,'sqoop','2017-01-02');
+insert into X values (33,'sqoop','2017-01-03');
+insert into X values (34,'sqoop','2017-01-04');
+insert into X values (35,'sqoop','2017-01-05');
+insert into X values (41,'sqoop','2017-01-01');
+insert into X values (42,'sqoop','2017-01-02');
+insert into X values (43,'sqoop','2017-01-03');
+insert into X values (44,'sqoop','2017-01-04');
+insert into X values (45,'sqoop','2017-01-05');
+insert into X values (51,'sqoop','2017-01-01');
+insert into X values (52,'sqoop','2017-01-02');
+insert into X values (53,'sqoop','2017-01-03');
+insert into X values (54,'sqoop','2017-01-04');
+insert into X values (55,'sqoop','2017-01-05');
+insert into X values (151,'sqoop','2017-01-01');
+insert into X values (152,'sqoop','2017-01-02');
+insert into X values (153,'sqoop','2017-01-03');
+insert into X values (154,'sqoop','2017-01-04');
+insert into X values (155,'sqoop','2017-01-05');
+exit;
+----
+-- Salida Ejecución
+----
+       Job Counters
+                Launched map tasks=5
+                Other local map tasks=5
+                Total time spent by all maps in occupied slots (ms)=118408
+                Total time spent by all reduces in occupied slots (ms)=0
+                Total time spent by all map tasks (ms)=118408
+                Total vcore-milliseconds taken by all map tasks=118408
+                Total megabyte-milliseconds taken by all map tasks=121249792
